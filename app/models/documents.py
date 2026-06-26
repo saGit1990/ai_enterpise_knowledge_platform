@@ -18,6 +18,7 @@ class Document(Base):
     )
     filename: Mapped[str] = mapped_column(String(255), nullable=False)
     file_type: Mapped[str] = mapped_column(String(50), nullable=False)
+    file_size: Mapped[int] = mapped_column(  nullable=True)
     status: Mapped[str] = mapped_column(String(50), nullable=False, default="uploaded")
 
     created_at: Mapped[datetime] = mapped_column(
@@ -31,3 +32,6 @@ class Document(Base):
         onupdate=datetime.utcnow,
         nullable=False,
     )
+    storage_path: Mapped[str] = mapped_column(String(255), nullable=True)
+    mime_type: Mapped[str] = mapped_column(String(50), nullable=True)
+    processing_status: Mapped[str] = mapped_column(String(50), nullable=True,default='pending')
