@@ -9,6 +9,8 @@ dependencies = [
     "asyncpg>=0.31.0",
     "fastapi>=0.138.0",
     "pydantic-settings>=2.14.2",
+    "pymupdf>=1.28.0",
+    "python-docx>=1.2.0",
     "python-dotenv>=1.2.2",
     "redis>=8.0.0",
     "sqlalchemy>=2.0.51",
@@ -24,3 +26,5 @@ dev = [
     "pytest-asyncio>=1.4.0",
     "ruff>=0.15.18",
 ]
+
+

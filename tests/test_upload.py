@@ -21,3 +21,6 @@ def test_upload_pdf():
 
     assert response.status_code == 200
     assert response.json()["filename"] == "sample.pdf"
+
+if __name__ == "__main__":
+    test_upload_pdf()
