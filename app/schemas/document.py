@@ -26,3 +26,19 @@ class DocumentResponse(BaseModel):
     model_config = {
         "from_attributes": True
     }
+
+class DocumentChunkResponse(BaseModel):
+    id: UUID
+    document_id: UUID
+    document_content_id: UUID
+    chunk_index: int
+    chunk_text: str
+    start_char: int
+    end_char: int
+    char_count: int
+    token_estimate: int
+    created_at: datetime
+
+    model_config = {
+        "from_attributes": True
+    }

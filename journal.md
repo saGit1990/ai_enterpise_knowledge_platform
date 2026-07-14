@@ -942,11 +942,382 @@ This is the foundation for embeddings and retrieval.
 
 ---
 
+# Day 5 — Document Chunking
+
+## Goal
+
+Split extracted text into manageable chunks for embeddings and LLM processing.
+
+---
+
+## Problem
+
+Raw extracted text is too large.
+
+Examples:
+
+* 100-page document = 50,000+ tokens
+* LLM context windows are limited (4k-128k tokens)
+* Embeddings work best on ~512 token chunks
+* Need strategy for maintaining context between chunks
+
+---
+
+## Solution
+
+Implement chunking layer with:
+
+* multiple chunking strategies (extensible)
+* configurable chunk size
+* overlap (context preservation)
+* token estimation
+* chunk metadata
+
+---
+
+## Architecture
+
+```
+Raw Text (document_contents)
+
+         ↓
+
+Chunking Service
+
+         ↓
+
+Chunking Strategy
+
+├── Fixed Size Chunker
+
+├── Sentence Chunker (future)
+
+└── Semantic Chunker (future)
+
+         ↓
+
+Chunk Metadata Extraction
+
+         ↓
+
+DocumentChunk Model
+
+         ↓
+
+PostgreSQL (document_chunks table)
+```
+
+---
+
+## Components Built
+
+* `ChunkingStrategy` (base class)
+* `FixedSizeChunker` (implementation)
+* `TextChunk` (data structure)
+* `DocumentChunk` (SQLAlchemy model)
+* `DocumentChunkRepository` (CRUD)
+* `ChunkingService` (orchestration)
+* `/chunk` endpoint
+* `DocumentChunkResponse` (Pydantic schema)
+
+---
+
+## Core Concepts
+
+### Chunk
+
+A segment of text with metadata:
+
+```
+{
+  chunk_index: 0,
+  text: "The quick brown fox...",
+  start_char: 0,
+  end_char: 150,
+  char_count: 150,
+  token_estimate: 25
+}
+```
+
+---
+
+### ChunkingStrategy
+
+Pattern for different chunking approaches.
+
+Current implementation:
+
+* Fixed Size (512 chars)
+* Configurable overlap (50 chars)
+
+Future strategies:
+
+* Sentence-based
+* Paragraph-based
+* Semantic (using embeddings)
+* Format-aware (table rows, code blocks)
+
+---
+
+### Token Estimation
+
+Estimate token count without external API.
+
+Formula:
+
+```
+tokens ≈ char_count / 4
+```
+
+Enables:
+
+* pre-filtering before LLM calls
+* cost estimation
+* context window validation
+
+---
+
+### Overlap
+
+Chunks share context.
+
+Example:
+
+```
+Chunk 0: [0-512]
+
+Chunk 1: [462-974]   (50 char overlap)
+
+Chunk 2: [924-1436]  (50 char overlap)
+```
+
+Benefits:
+
+* better retrieval accuracy
+* preserves context boundaries
+* prevents idea fragmentation
+
+---
+
+## Why Separate Chunking?
+
+Extraction creates raw content.
+
+Chunking is independent concern.
+
+Separation enables:
+
+* different chunking strategies
+* reprocessing with new strategy
+* testing without extraction
+* future async processing
+
+---
+
+## Design Decisions
+
+### Why Strategy Pattern?
+
+Chunking approaches vary:
+
+* Fixed size (simple, reliable)
+* Sentence-based (structure aware)
+* Semantic (uses embeddings)
+* Language-specific (CJK vs Latin)
+
+Strategy pattern allows all approaches without if/else sprawl.
+
+---
+
+### Why Fixed Size First?
+
+* Deterministic
+* Performant
+* Good baseline
+* Easy to test
+
+---
+
+### Why Overlap?
+
+Naive chunking loses context at boundaries.
+
+Example:
+
+```
+"...the cat sat on the mat. The mouse ran away."
+```
+
+Without overlap, both sentences might split.
+
+With overlap, full context preserved.
+
+---
+
+### Why Separate Table?
+
+Benefits:
+
+* fast chunk lookup
+* efficient filtering by document
+* supports bulk operations
+* prepares for vector storage
+
+---
+
+### Why Token Estimation?
+
+Before embeddings/LLM:
+
+```
+Validate: char_count / 4 ≤ max_tokens
+
+Execute with confidence
+```
+
+---
+
+## How It Works
+
+1. User uploads PDF.
+2. Extraction creates raw text in `document_contents`.
+3. ChunkingService loads raw text.
+4. FixedSizeChunker splits into TextChunk objects.
+5. Token metadata calculated.
+6. DocumentChunk records created.
+7. Stored in `document_chunks` table.
+8. Indexed by document_id and chunk_index.
+
+---
+
+## Data Flow Example
+
+**Upload:** `example.pdf`
+
+↓
+
+**Extraction:** 15,000 characters of raw text
+
+↓
+
+**Chunking (512 char chunks, 50 overlap):**
+
+* Chunk 0: chars 0-512 (128 tokens est.)
+* Chunk 1: chars 462-974 (128 tokens est.)
+* Chunk 2: chars 924-1436 (128 tokens est.)
+* ... (continues)
+
+↓
+
+**Storage:** 30 DocumentChunk records created
+
+---
+
+## Interface
+
+### ChunkingService.chunk_document_content()
+
+```
+Input:  document_id, raw_text
+Output: list[DocumentChunk]
+```
+
+Handles:
+
+* validation
+* chunking strategy selection
+* persistence
+* error handling
+
+---
+
+## Query Optimization
+
+Retrieve chunks for a document:
+
+```
+SELECT * FROM document_chunks
+WHERE document_id = ?
+ORDER BY chunk_index ASC
+```
+
+Enables:
+
+* sequential processing
+* retrieval (top-k)
+* context assembly
+
+---
+
+## Design Patterns Applied
+
+1. **Strategy Pattern** - Supports multiple chunking algorithms
+2. **Dependency Injection** - Service receives repository
+3. **Data Transfer Object** - TextChunk carries chunking data
+4. **Repository Pattern** - Isolates persistence
+
+---
+
+## Interview Explanation
+
+> We implemented a chunking layer that splits large documents into fixed-size chunks with configurable overlap. By using the Strategy pattern, we can easily add semantic chunking (using embeddings) or language-specific approaches later without changing the orchestration logic. Storing chunks in a separate table allows efficient retrieval and prepares us for vector storage.
+
+---
+
+## What Day 5 Unlocks
+
+Once chunking is complete:
+
+```
+Document Upload
+
+↓
+
+Text Extraction
+
+↓
+
+Chunk Creation
+
+↓
+
+Chunk Storage
+```
+
+This enables:
+
+* **Day 6:** Embeddings generation
+* **Day 7:** Vector database integration
+* **Day 8:** Semantic search
+* **Day 9:** RAG pipeline
+
+---
+
+## Milestone Achieved
+
+Application can process documents into structured chunks ready for embeddings.
+
+---
+
+# Overall Progress
+
+| Day   | Status                          |
+| ----- | ------------------------------- |
+| Day 1 | ✅ Complete                      |
+| Day 2 | ✅ Complete                      |
+| Day 3 | ✅ Complete                      |
+| Day 4 | ✅ Complete                      |
+| Day 5 | ✅ Complete                      |
+
+---
+
 # Lessons Learned So Far
 
 1. Good architecture is more important than writing AI code quickly.
 2. Separate responsibilities early.
-3. Design for replacement (StorageService, ProcessorFactory).
+3. Design for replacement (StorageService, ProcessorFactory, ChunkingStrategy).
 4. Keep metadata separate from large content.
 5. Introduce abstractions before complexity arrives.
 6. Build production infrastructure first, AI capabilities second.
+7. Chunking strategy is critical for retrieval quality—invest in the right approach for your domain.
+8. Overlap between chunks prevents information loss at boundaries.

@@ -15,7 +15,7 @@ class DOCXProcessor(DocumentProcessor):
         )
 
         return ExtractionResult(
-            text=text,
+            text=text, 
             page_count=None,
             char_count=len(text),
-        )
+        ) 

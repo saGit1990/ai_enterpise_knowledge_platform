@@ -1,0 +1,200 @@
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
+
+This is a sample enterprise policy document.
+
+The company requires all employees to follow information security rules.
+Confidential documents must not be shared outside approved systems.
+Employees must report suspicious activity to the security team.
+Vendor onboarding requires approval from procurement, legal, and compliance teams.
+All contracts must include data privacy clauses and termination conditions.
+Access to sensitive systems must follow role-based access control.
+This document is used to test extraction, chunking, and future RAG retrieval.
